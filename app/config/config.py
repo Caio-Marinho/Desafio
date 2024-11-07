@@ -1,5 +1,5 @@
 import os
-
+from datetime import timedelta
 
 
 class Config:
@@ -7,6 +7,14 @@ class Config:
     # A chave secreta deve ser mantida em segredo e nunca deve ser compartilhada publicamente.
     SECRET_KEY = os.environ.get('SECRET_KEY', os.urandom(24).hex())
 
+
+    JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY', os.urandom(24).hex())
+
+    JWT_ACCESS_TOKEN_EXPIRES = os.environ.get('JWT_ACCESS_TOKEN_EXPIRES', timedelta(hours=1))
+
+    JWT_TOKEN_LOCATION = 'cookies'
+
+    JWT_ACCESS_COOKIE_NAME = 'JWT_TOKEN'
 
     # Define se o modo de depuração está ativado.
     # O modo de depuração deve ser desativado em produção para evitar vazamentos de informações sensíveis.
