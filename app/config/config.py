@@ -7,7 +7,6 @@ class Config:
     # A chave secreta deve ser mantida em segredo e nunca deve ser compartilhada publicamente.
     SECRET_KEY = os.environ.get('SECRET_KEY', os.urandom(24).hex())
 
-
     JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY', os.urandom(24).hex())
 
     JWT_ACCESS_TOKEN_EXPIRES = os.environ.get('JWT_ACCESS_TOKEN_EXPIRES', timedelta(hours=1))
