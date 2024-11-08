@@ -39,6 +39,6 @@ class Avaliacao(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     usuario_id = db.Column(db.Integer, db.ForeignKey('usuarios.id'), nullable=False)
     livro_id = db.Column(db.Integer, db.ForeignKey('livro.id'), nullable=False)
-    nota = db.Column(db.Integer, nullable=False)
+    nota = db.Column(db.FLOAT, nullable=False)
     comentario = db.Column(db.Text, nullable=True)
 
