@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from flask import Flask, jsonify, make_response, request
-from models import db, Usuarios, Clube
+from models import db, Usuarios, Clube, Livro, Avaliacao
 from config.config import Config
 from auth.auth import criar_token, jwt_required, pegar_identidade
 from auth import jwt
@@ -33,7 +33,6 @@ def login():
         token = criar_token(identidade=usuario.username)
         response = make_response(jsonify({'user': usuario.username, 'login': usuario.hash_senha, 'token': token}))
         response.set_cookie('JWT_TOKEN', token, httponly=True, secure=True)
-        print(app.config)
         return response
     return jsonify({'status': 'Falha'})
 
@@ -123,6 +122,16 @@ def deletar_clube():
     db.session.delete(clube)
     db.session.commit()
     return 'Deletado'
+
+
+@app.route('/cadastrar_livro', methods=['POST'])
+@jwt_required()
+def cadastra_livro():
+    dados = request.get_json()
+    livro = Livro(titulo=dados['titulo'], autor=dados['autor'], clube_id=dados['id_clube'])
+    db.session.add(livro)
+    db.session.commit()
+    return jsonify({'titulo': dados['titulo'], 'autor': dados['autor'], 'id_clube': dados['id_clube']})
 
 
 if __name__ == '__main__':
