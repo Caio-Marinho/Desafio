@@ -33,7 +33,6 @@ def login():
         token = criar_token(identidade=usuario.username)
         response = make_response(jsonify({'user': usuario.username, 'login': usuario.hash_senha, 'token': token}))
         response.set_cookie('JWT_TOKEN', token, httponly=True, secure=True)
-        print(app.config)
         return response
     return jsonify({'status': 'Falha'})
 
