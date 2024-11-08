@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from flask import Flask, jsonify, make_response, request
 from models import db, Usuarios, Clube, Livro, Avaliacao
 from config.config import Config
@@ -132,6 +130,20 @@ def cadastra_livro():
     db.session.add(livro)
     db.session.commit()
     return jsonify({'titulo': dados['titulo'], 'autor': dados['autor'], 'id_clube': dados['id_clube']})
+
+
+@app.route('/registro', methods=['POST'])
+@jwt_required()
+def registar_avaliacao():
+    identidade = pegar_identidade()
+    dados = request.get_json()
+    usuario = Usuarios.query.filter_by(username=identidade).first()
+    avaliacao = Avaliacao(usuario_id=usuario.id, livro_id=dados['id_livro'], nota=dados['nota'],
+                          comentario=dados['comentario'])
+    db.session.add(avaliacao)
+    db.session.commit()
+    return jsonify(usuario_id=usuario.id, livro_id=dados['id_livro'], nota=dados['nota'],
+                   comentario=dados['comentario'])
 
 
 if __name__ == '__main__':
