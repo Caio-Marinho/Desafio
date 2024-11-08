@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, make_response, request
+from flask_caching import Cache
 from models import db, Usuarios, Clube, Livro, Avaliacao
 from config.config import Config
 from auth.auth import criar_token, jwt_required, pegar_identidade
@@ -6,6 +7,7 @@ from auth import jwt
 
 app = Flask(__name__)
 app.config.from_object(Config)  # instanciar as configurações do sistema
+cache = Cache(app)
 jwt.init_app(app)  # Inicializa a verificação da autenticação
 db.init_app(app)  # Inicializar o banco de dados
 with app.app_context():
@@ -39,8 +41,6 @@ def login():
 @jwt_required()
 def atualizar():
     dados = request.get_json()
-    print(dados)
-
     # Obter a identidade do usuário autenticado
     identidade_usuario = pegar_identidade()
 
@@ -130,6 +130,13 @@ def cadastra_livro():
     db.session.add(livro)
     db.session.commit()
     return jsonify({'titulo': dados['titulo'], 'autor': dados['autor'], 'id_clube': dados['id_clube']})
+
+
+@app.route('/listar_livros', methods=['GET'])
+@cache.cached(timeout=3600)  # 3600 segundo equivale a 1 hora
+def listar_livro():
+    livros = Livro.query.all()
+    return jsonify([{'titulo': livro.titulo, 'autor': livro.autor} for livro in livros])
 
 
 @app.route('/registro', methods=['POST'])
