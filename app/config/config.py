@@ -17,6 +17,10 @@ class Config:
 
     JWT_COOKIE_CSRF_PROTECT = False
 
+    CACHE_TYPE = 'redis'
+
+    CACHE_REDIS_URL = 'redis://localhost:6379/0'
+
     # Define se o modo de depuração está ativado.
     # O modo de depuração deve ser desativado em produção para evitar vazamentos de informações sensíveis.
     FLASK_DEBUG = os.environ.get('FLASK_DEBUG', True)  # Use variáveis de ambiente para controlar o modo de depuração.
