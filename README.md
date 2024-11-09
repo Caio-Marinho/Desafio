@@ -1,11 +1,41 @@
 # Deafio de Back-end
+
+## Situação-Problema
+Uma startup chamada "BookBridge" está desenvolvendo uma plataforma que facilita a criação e o gerenciamento de clubes de leitura online. 
+O objetivo é permitir que grupos de pessoas se reúnam para discutir livros, planejem sessões de leitura e compartilhem suas impressões. 
+Eles precisam de uma API que permita que os usuários se cadastrem, 
+criem clubes de leitura, adicionem livros à lista de leitura do clube e registrem suas opiniões sobre os livros lidos. 
+A API deve oferecer um sistema de autenticação para garantir a segurança dos dados dos usuários e fornecer estatísticas básicas sobre as leituras.
+
+### Features Obrigatórias:
+
+1. CRUD de usuários e clubes de leitura.
+
+2. Endpoint para adicionar e gerenciar a lista de livros dos clubes.
+
+3. Implementação de autenticação com JWT.
+
+4. Persistência de dados em banco de dados SQL.
+
+5. Endpoint para registrar opiniões e avaliações dos livros lidos.
+
+### Features Não Obrigatórias:
+
+1. Implementação de um sistema de cache para melhorar a performance.
+
+2. Implementação de testes unitários.
+
+3. Endpoint adicional que forneça estatísticas como o número médio de livros lidos por clube ou a média de avaliações dos livros.
+
+4. Registro de logs de atividades na API.
+
 ## Estrutura de Pastas
 ```
 /app
 |---/auth - Pasta referente aos arquivos de autenticação
 |---/config - Pasta referente aos arquivos de Configuração do Sistema(Ex.: Conexão com o banco de dados)
 |---/models - Pasta referente aos arquivos e modelos do banco de dados
-|---/log - Pasta referente aos arquivos de log.
+|---/log - Pasta referente aos arquivos de log
 ```
 ## Estrutura de Arquivos
 ```
