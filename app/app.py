@@ -175,7 +175,7 @@ def media_clube():
     response = [
         {
             'Livros Lidos': lista.count(item.id),  # Conta quantas vezes o id aparece
-            'Clube': item.nome_clube,
+            'Clube': item.nome_clube, # Receber o nome do clube
             'livro': livros_lidos[item.id - 1],  # Acessa o livro pela posição
             'média das notas avaliadas pelo clube': float(f"{notas[item.id - 1]:.2f}")
         }
