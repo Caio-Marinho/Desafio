@@ -153,5 +153,36 @@ def registar_avaliacao():
                    comentario=dados['comentario'])
 
 
+@app.route('/estatistica', methods=['GET'])
+def media_clube():
+    leitura = (Clube.query.join(Livro).join(Avaliacao).all())
+    lista = []
+    livros_lidos = []
+    notas = []
+    # Imprimir o dicionário de cada objeto na lista leitura
+    for item in leitura:
+        lido = []
+        nota = []
+        for livro in item.livros:
+            lista.append(livro.clube_id)
+            if item.id == livro.clube_id:
+                lido.append(livro.titulo)
+            for avalia in livro.avaliacoes:
+                if avalia.livro_id == livro.id:
+                    nota.append(avalia.nota)
+        notas.append(sum(nota)/len(nota))
+        livros_lidos.append(lido)
+    response = [
+        {
+            'Livros Lidos': lista.count(item.id),  # Conta quantas vezes o id aparece
+            'Clube': item.nome_clube,
+            'livro': livros_lidos[item.id - 1],  # Acessa o livro pela posição
+            'média das notas avaliadas pelo clube': float(f"{notas[item.id - 1]:.2f}")
+        }
+        for item in leitura  # Itera sobre cada clube de leitura
+    ]
+    return jsonify(response)
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
