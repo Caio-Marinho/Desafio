@@ -4,6 +4,7 @@ from models import db, Usuarios, Clube, Livro, Avaliacao
 from config.config import Config
 from auth.auth import criar_token, jwt_required, pegar_identidade
 from auth import jwt
+from log.logger import info_log, resposta_log
 
 app = Flask(__name__)
 app.config.from_object(Config)  # instanciar as configurações do sistema
@@ -12,6 +13,16 @@ jwt.init_app(app)  # Inicializa a verificação da autenticação
 db.init_app(app)  # Inicializar o banco de dados
 with app.app_context():
     db.create_all()  # Caso não tenha criado criar as tabelas do banco
+
+
+@app.before_request
+def requisicao_log():
+    info_log()
+
+
+@app.after_request
+def responsta_requisicao(responser):
+    return resposta_log(responser)
 
 
 @app.route('/cadastrar', methods=['POST'])
@@ -171,14 +182,14 @@ def media_clube():
             for avalia in livro.avaliacoes:
                 if avalia.livro_id == livro.id:
                     nota.append(avalia.nota)
-        notas.append(sum(nota)/len(nota))
+        notas.append(sum(nota) / len(nota))
         livros_lidos.append(lido)
     response = [
         {
             'Livros Lidos': lista.count(item.id),  # Conta quantas vezes o id aparece
-            'Clube': item.nome_clube, # Receber o nome do clube
+            'Clube': item.nome_clube,  # Receber o nome do clube
             'livro': livros_lidos[item.id - 1],  # Acessa o livro pela posição
-            'média das notas avaliadas pelo clube': float(f"{notas[item.id - 1]:.2f}")
+            'media das notas avaliadas pelo clube': float(f"{notas[item.id - 1]:.2f}")
         }
         for item in leitura  # Itera sobre cada clube de leitura
     ]
