@@ -1,0 +1,164 @@
+2024-11-09 14:31:16,224 - DEBUG - Building SSL context
+2024-11-09 14:31:16,282 - DEBUG - Switching to SSL
+2024-11-09 14:31:16,290 - DEBUG - SSL has been enabled
+2024-11-09 14:31:16,290 - DEBUG - Starting authorization phase
+2024-11-09 14:31:16,290 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-11-09 14:31:16,291 - INFO - package: mysql.connector.plugins
+2024-11-09 14:31:16,291 - INFO - plugin_name: caching_sha2_password
+2024-11-09 14:31:16,291 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-11-09 14:31:16,291 - DEBUG - Exchanging further packets
+2024-11-09 14:31:16,291 - DEBUG - caching_sha2_password completed succesfully
+2024-11-09 14:31:16,359 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-09 14:31:16,359 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-09 14:31:16,361 - INFO -  * Restarting with stat
+2024-11-09 14:31:17,416 - DEBUG - Building SSL context
+2024-11-09 14:31:17,482 - DEBUG - Switching to SSL
+2024-11-09 14:31:17,489 - DEBUG - SSL has been enabled
+2024-11-09 14:31:17,490 - DEBUG - Starting authorization phase
+2024-11-09 14:31:17,490 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-11-09 14:31:17,490 - INFO - package: mysql.connector.plugins
+2024-11-09 14:31:17,490 - INFO - plugin_name: caching_sha2_password
+2024-11-09 14:31:17,490 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-11-09 14:31:17,490 - DEBUG - Exchanging further packets
+2024-11-09 14:31:17,491 - DEBUG - caching_sha2_password completed succesfully
+2024-11-09 14:31:17,535 - WARNING -  * Debugger is active!
+2024-11-09 14:31:17,538 - INFO -  * Debugger PIN: 215-642-455
+2024-11-09 14:31:18,694 - DEBUG - Headers: Content-Type: application/json
+User-Agent: PostmanRuntime/7.42.0
+Accept: */*
+Postman-Token: 8d24a866-1885-43de-a458-0f609a68c20e
+Host: localhost:5000
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 2
+Cookie: _csrf_token=42ae4b9d59bfa1860f4e7e07bbf69cf4b172d828a5edad5d0b72c018a83bc4d7
+
+
+2024-11-09 14:31:18,694 - INFO - Requisição para /estatistica com método GET
+2024-11-09 14:31:18,694 - DEBUG - Dados: 
+
+2024-11-09 14:31:18,710 - INFO - Cache used for key: view//estatistica
+2024-11-09 14:31:18,710 - INFO - Resposta com status 200 OK
+2024-11-09 14:31:18,710 - DEBUG - Dados de resposta: [
+  {
+    "Clube": "Clube Liter\u00e1rio Central",
+    "Livros Lidos": 4,
+    "livro": [
+      "Dom Casmurro",
+      "1984",
+      "A Ilha do Tesouro",
+      "As Aventuras de Sherlock Holmes"
+    ],
+    "m\u00e9dia das notas avaliadas pelo clube": 5.28
+  },
+  {
+    "Clube": "Livros e Caf\u00e9",
+    "Livros Lidos": 5,
+    "livro": [
+      "O Hobbit",
+      "Harry Potter e a Pedra Filosofal",
+      "O Conde de Monte Cristo",
+      "Dr\u00e1cula",
+      "O Alquimista"
+    ],
+    "m\u00e9dia das notas avaliadas pelo clube": 5.95
+  },
+  {
+    "Clube": "Exploradores de Mundos",
+    "Livros Lidos": 4,
+    "livro": [
+      "O Senhor dos An\u00e9is",
+      "A Guerra dos Tronos",
+      "Mataram a Cotovia",
+      "O Sol \u00e9 para Todos"
+    ],
+    "m\u00e9dia das notas avaliadas pelo clube": 5.88
+  },
+  {
+    "Clube": "Sociedade dos Cl\u00e1ssicos",
+    "Livros Lidos": 2,
+    "livro": [
+      "Cem Anos de Solid\u00e3o",
+      "O M\u00e1gico de Oz"
+    ],
+    "m\u00e9dia das notas avaliadas pelo clube": 5.82
+  },
+  {
+    "Clube": "Amantes de Fic\u00e7\u00e3o Cient\u00edfica",
+    "Livros Lidos": 4,
+    "livro": [
+      "O Primo Bas\u00edlio",
+      "Fahrenheit 451",
+      "O Pequeno Pr\u00edncipe",
+      "A Casa dos Esp\u00edritos"
+    ],
+    "m\u00e9dia das notas avaliadas pelo clube": 6.0
+  },
+  {
+    "Clube": "Clube do Romance Contempor\u00e2neo",
+    "Livros Lidos": 4,
+    "livro": [
+      "A Revolu\u00e7\u00e3o dos Bichos",
+      "A Menina que Roubava Livros",
+      "O Nome do Vento",
+      "O Lado Bom da Vida"
+    ],
+    "m\u00e9dia das notas avaliadas pelo clube": 5.68
+  },
+  {
+    "Clube": "Literatura Fant\u00e1stica",
+    "Livros Lidos": 3,
+    "livro": [
+      "A Culpa \u00e9 das Estrelas",
+      "O C\u00f3digo Da Vinci",
+      "O Inferno de Dante"
+    ],
+    "m\u00e9dia das notas avaliadas pelo clube": 6.25
+  },
+  {
+    "Clube": "Encontro dos Historiadores",
+    "Livros Lidos": 3,
+    "livro": [
+      "Os Miser\u00e1veis",
+      "O Retrato de Dorian Gray",
+      "O Hobbit"
+    ],
+    "m\u00e9dia das notas avaliadas pelo clube": 6.03
+  },
+  {
+    "Clube": "Leitores de Thriller",
+    "Livros Lidos": 3,
+    "livro": [
+      "O Grande Gatsby",
+      "Orgulho e Preconceito",
+      "O \u00daltimo dos Moicanos"
+    ],
+    "m\u00e9dia das notas avaliadas pelo clube": 7.5
+  },
+  {
+    "Clube": "Poesia e Prosa",
+    "Livros Lidos": 2,
+    "livro": [
+      "O Di\u00e1rio de Anne Frank",
+      "O Retrato de Dorian Gray"
+    ],
+    "m\u00e9dia das notas avaliadas pelo clube": 8.5
+  }
+]
+
+2024-11-09 14:31:18,711 - INFO - 127.0.0.1 - - [09/Nov/2024 14:31:18] "GET /estatistica HTTP/1.1" 200 -
+2024-11-09 14:31:55,831 - INFO -  * Detected change in 'C:\\Users\\caiog\\PycharmProjects\\Desafio_back\\Desafio\\app\\app.py', reloading
+2024-11-09 14:31:55,959 - INFO -  * Restarting with stat
+2024-11-09 14:31:57,318 - DEBUG - Building SSL context
+2024-11-09 14:31:57,383 - DEBUG - Switching to SSL
+2024-11-09 14:31:57,391 - DEBUG - SSL has been enabled
+2024-11-09 14:31:57,391 - DEBUG - Starting authorization phase
+2024-11-09 14:31:57,392 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-11-09 14:31:57,392 - INFO - package: mysql.connector.plugins
+2024-11-09 14:31:57,392 - INFO - plugin_name: caching_sha2_password
+2024-11-09 14:31:57,392 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-11-09 14:31:57,392 - DEBUG - Exchanging further packets
+2024-11-09 14:31:57,392 - DEBUG - caching_sha2_password completed succesfully
+2024-11-09 14:31:57,442 - WARNING -  * Debugger is active!
+2024-11-09 14:31:57,446 - INFO -  * Debugger PIN: 215-642-455
