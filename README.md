@@ -5,7 +5,7 @@
 |---/auth - Pasta referente aos arquivos de autenticação
 |---/config - Pasta referente aos arquivos de Configuração do Sistema(Ex.: Conexão com o banco de dados)
 |---/models - Pasta referente aos arquivos e modelos do banco de dados
-|---/log - Pasta referente aos arquivos de log.
+|---/log - Pasta referente aos arquivos de log
 ```
 ## Estrutura de Arquivos
 ```
