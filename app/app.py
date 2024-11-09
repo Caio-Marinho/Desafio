@@ -154,6 +154,7 @@ def registar_avaliacao():
 
 
 @app.route('/estatistica', methods=['GET'])
+@cache.cached(timeout=3600)
 def media_clube():
     leitura = (Clube.query.join(Livro).join(Avaliacao).all())
     lista = []
